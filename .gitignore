@@ -6,7 +6,6 @@
 .pnp.js
 .gitignore
 *.json
-README.md
 # testing
 /coverage
 
