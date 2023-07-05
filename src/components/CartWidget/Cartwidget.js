@@ -1,11 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import './_CartWidget.scss'
 
 const CartWidget = () => {
     return (
-        <div className='App' style={{ fontSize: "1.2em", color: "blue" }}>
-            <FontAwesomeIcon icon={faCartShopping} />
-            0
+        <div className='carrito'>
+            <FontAwesomeIcon className='icono-carrito' icon={faCartShopping} />
+            <span className='numerito'>0</span>
         </div>
     )
 }
