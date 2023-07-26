@@ -1,11 +1,7 @@
-
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import { Navbar, Container, Nav, } from 'react-bootstrap';
 import { NavLink, Link } from 'react-router-dom';
-import './_NavBar.scss'
+import CartWidget from '../CartWidget/Cartwidget';
+import './_NavBar.scss';
 
 const NavBar = () => {
     return (
@@ -27,16 +23,8 @@ const NavBar = () => {
                             <NavLink to={`/category/teclado`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}><button>Teclados</button></NavLink>
 
                         </div>
+                        <CartWidget />
                     </Nav>
-                    <Form className="d-flex">
-                        <Form.Control
-                            type="search"
-                            placeholder="Search"
-                            className="me-2"
-                            aria-label="Search"
-                        />
-                        <Button variant="outline-success">Search</Button>
-                    </Form>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

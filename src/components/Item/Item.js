@@ -27,6 +27,7 @@ const Item = ({ id, name, img, price, stock }) => {
             </footer>
         </article>
     )
+
 }
 
 export default Item;

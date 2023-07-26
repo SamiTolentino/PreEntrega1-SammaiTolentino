@@ -1,0 +1,32 @@
+.Counter {
+    .Controls {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+
+        .Button {
+            margin: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ccc;
+            border-radius: 40px;
+        }
+
+        .Button:hover {
+            background-color: rgba(255, 0, 0, 0.253);
+        }
+
+        .Number {
+            padding: 7px;
+        }
+    }
+
+    .ButtonCompra {
+        margin: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border: 1px solid #b8b8b8ad;
+        border-radius: 40px;
+    }
+    .ButtonCompra:hover{
+        background-color: rgba(76, 0, 255, 0.349);
+    }
+}
