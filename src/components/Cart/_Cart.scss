@@ -1,0 +1,55 @@
+.Cart {
+  padding: 20px;
+
+  .Cart__Title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .Cart__Total {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .Cart__Button,
+  .Cart__Comprar {
+    width: 150px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-left: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #45a049;
+    }
+  }
+}
+
+.Cart__Vacio {
+  h1 {
+    color: #0400ff;
+    ;
+  }
+
+  p{
+    font-size: 18px;
+  }
+
+  .Cart__Invisible {
+    width: 400px;
+    border-radius: 15px;
+  }
+
+  @media (max-width: 600px) {
+    .Cart__Invisible {
+      width: 350px;
+    }
+  }
+}

@@ -4,7 +4,7 @@ import { CartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import "./_ItemDetail.scss";
 
-const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
+const ItemDetail = ({ id, nameitem, name, img, category, description, price, stock }) => {
     const [quantityAdded, setQuantityAdded] = useState(0)
 
     const { addItem } = useContext(CartContext)
@@ -23,9 +23,6 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
 
     return (
         <div className="CardItemDetail">
-            <div className="HeaderDetail">
-
-            </div>
             <div className="ImageContainer">
                 <h2 className="ItemHeaderDetail">
                     {name}
@@ -37,7 +34,7 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
             <div className="DescriptionContainer">
                 <section>
                     <p className="InfoCategory">
-                        {category}
+                        {nameitem}
                     </p>
                     <div className="InfoDescripcion">
                         <h2>Descripcion</h2>

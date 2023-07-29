@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { getDocs, collection, query, where } from "firebase/firestore";
-import { db } from "../../config/firebase";
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getDocs, collection, query, where } from 'firebase/firestore';
+import { db } from '../../config/firebase';
 import ItemList from '../ItemList/ItemList';
 import SearchBar from '../SearchBar/SearchBar';
 
@@ -20,25 +20,27 @@ const ItemListContainer = ({ greeting }) => {
       : collection(db, 'products');
 
     getDocs(collectionRef)
-      .then(response => {
-        const productsAdapted = response.docs.map(doc => {
+      .then((response) => {
+        const productsAdapted = response.docs.map((doc) => {
           const data = doc.data();
           return { id: doc.id, ...data };
         });
         setProducts(productsAdapted);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       })
       .finally(() => {
         setLoading(false);
       });
-
   }, [categoryId]);
 
   const handleSearch = (searchTerm) => {
-    const filtered = products.filter(product =>
-      product.name.toLowerCase().includes(searchTerm.toLowerCase())
+    const filtered = products.filter(
+      (product) =>
+        product.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        product.nameitem.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredProducts(filtered);
   };
@@ -47,14 +49,12 @@ const ItemListContainer = ({ greeting }) => {
     <div>
       <h1>{greeting}</h1>
       <SearchBar onSearch={handleSearch} />
-      {loading ? (
-        <p>Cargando...</p>
-      ) : (
-        <ItemList products={filteredProducts.length > 0 ? filteredProducts : products} />
-      )}
+      {loading ? <p>Cargando...</p> : <ItemList products={filteredProducts.length > 0 ? filteredProducts : products} />}
     </div>
   );
-}
+};
 
 export default ItemListContainer;
+
+
 

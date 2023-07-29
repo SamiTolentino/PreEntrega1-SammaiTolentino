@@ -18,94 +18,89 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
-    .HeaderDetail {
-        grid-column: 1 / -1;
-        text-align: center;
+    .ItemHeaderDetail {
+        font-size: 24px;
+        color: #007bff;
+    }
+}
 
-        .ItemHeaderDetail {
-            font-size: 24px;
-            color: #333;
-        }
+picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .ItemImgDetail {
+        max-width: 100%;
+        max-height: 550px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+
+    .InfoCategory {
+        font-size: 23px;
+        font-weight: 600;
+        color: #6048e9;
     }
 
-    picture {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        img.ItemImgDetail {
-            max-width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
+    .InfoDescripcion {
+        font-size: 22px;
     }
 
-    section {
-        display: flex;
-        flex-direction: column;
+    .InfoPrice {
+        font-size: 26px;
+        color: #0056b3;
+    }
 
+    @media (max-width: 1078px) {
         .InfoCategory {
-            font-size: 23px;
-            font-weight: 600;
-            color: #6048e9;
+            font-size: 21px;
         }
 
         .InfoDescripcion {
-            font-size: 22px;
+            font-size: 20px;
         }
 
         .InfoPrice {
-            font-size: 26px;
-            color: #0056b3;
-        }
-
-        @media (max-width: 1078px) {
-            .InfoCategory {
-                font-size: 21px;
-            }
-
-            .InfoDescripcion {
-                font-size: 20px;
-            }
-
-            .InfoPrice {
-                font-size: 24px;
-            }
-        }
-
-        @media (max-width: 738px) {
-            .InfoCategory {
-                font-size: 18px;
-            }
-
-            .InfoDescripcion {
-                font-size: 17px;
-            }
-
-            .InfoPrice {
-                font-size: 21px;
-            }
+            font-size: 24px;
         }
     }
 
-    .ItemFooterDetail {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin-top: auto;
+    @media (max-width: 738px) {
+        .InfoCategory {
+            font-size: 18px;
+        }
 
-        .OptionDetail {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
+        .InfoDescripcion {
+            font-size: 17px;
+        }
 
-            &:hover {
-                background-color: #0056b3;
-            }
+        .InfoPrice {
+            font-size: 21px;
+        }
+    }
+}
+
+.ItemFooterDetail {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: auto;
+
+    .OptionDetail {
+        padding: 10px 20px;
+        background-color: #dc3545;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #0056b3;
         }
     }
 }

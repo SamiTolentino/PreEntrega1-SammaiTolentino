@@ -1,9 +1,9 @@
-
 import { useContext, useState } from "react";
 import { db } from "../../config/firebase";
 import { CartContext } from "../../context/CartContext";
 import { Timestamp, addDoc, collection, getDocs, query, where, writeBatch, documentId } from "firebase/firestore";
 import CheckoutForm from '../CheckoutForm/CheckoutForm'
+import './_Checkout.scss'
 
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
@@ -59,20 +59,27 @@ const Checkout = () => {
         }
     }
 
-    if (loading) {
-        return <h1>Se esta generando su orden...</h1>
-    }
-
-    if (orderId) {
-        return <h1>El id de su orden es: {orderId}</h1>
-    }
-
     return (
-        <div>
-            <h1>Checkout</h1>
-            <CheckoutForm onConfirm={createOrder} />
+        <div className="Checkout">
+            {loading && <h1 className="loadingMensaje">Se está generando su orden...</h1>}
+            {orderId ? (
+                <div className="orderConfirmacion">
+                    <h1 className="order-id">El id de su orden es: {orderId}</h1>
+                    <h2 className="Gracias">Gracias por su compra. ¡Vuelva pronto!</h2>
+                    <img
+                        src="https://i.gifer.com/origin/61/61b07c5d234ac62a485bbc1ef5cb0da8_w200.webp"
+                        alt="Gracias por su compra"
+                        className="GraciasImg"
+                    />
+                </div>
+            ) : (
+                <div>
+                    <h1 className="checkoutCompra">Orden de Compra</h1>
+                    <CheckoutForm onConfirm={createOrder} />
+                </div>
+            )}
         </div>
-    )
-}
+    );
+};
 
 export default Checkout;

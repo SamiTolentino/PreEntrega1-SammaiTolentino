@@ -1,13 +1,54 @@
 .nav-button {
-    
-    button {
-        border-radius: 20px;
-        font-size: 15px;
-        padding: 10px 60px;
-    }
+  button {
+    border-radius: 20px;
+    font-size: 15px;
+    padding: 10px 60px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
 
-    button:hover {
-        background-color: rgb(161, 151, 151);
-    }
+  button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+  }
 }
 
+.footer-icons-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .footer-icon-item {
+    margin: 0 0.5rem;
+    display: inline-block;
+    position: relative;
+
+    .nav-link {
+      font-size: 30px;
+      color: #808080;
+      transition: color 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        color: #3b5998;
+        transform: scale(1.1);
+      }
+    }
+
+    .icon-linkedin:hover {
+      color: #0e76a8;
+      transform: scale(1.1);
+    }
+
+    .icon-github:hover {
+      color: #211F1F;
+      transform: scale(1.1);
+    }
+  }
+}

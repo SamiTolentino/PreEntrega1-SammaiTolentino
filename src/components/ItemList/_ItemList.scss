@@ -1,9 +1,16 @@
 .ListGroup {
     display: grid;
-    grid-template-columns: repeat(auto-fit,
-            minmax(340px,
-                1fr));
-    gap: 1.5rem;
-    padding: 5px;
-    margin: 5px;
-}
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    padding: 15px;
+    margin: 15px;
+  
+    @media (max-width: 759px) {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.8rem;
+      padding: 5px;
+      margin: 5px;
+    }
+  }
+  
+  

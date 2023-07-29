@@ -1,0 +1,39 @@
+.Checkout {
+    text-align: center;
+    padding: 20px;
+
+    .loadingMensaje {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #007bff;
+    }
+
+    .orderConfirmacion {
+        margin-top: 30px;
+
+        .order-id {
+            font-size: 24px;
+            color: #28a745;
+        }
+
+        .Gracias {
+            font-size: 20px;
+            margin-top: 10px;
+            color: #dc3545;
+        }
+
+
+
+        .GraciasImg {
+            width: 270px;
+            margin-top: 30px;
+            border-radius: 15px;
+        }
+
+    }
+}
+
+.checkoutCompra {
+    font-size: 35px;
+    color: #007bff;
+  }

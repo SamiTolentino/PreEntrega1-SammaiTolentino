@@ -1,33 +1,43 @@
-import { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Form} from 'react-bootstrap';
+import './_SearchBar.scss';
 
 const SearchBar = ({ onSearch }) => {
-    const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
 
-    const handleChange = (event) => {
-        setSearchTerm(event.target.value);
-    };
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        onSearch(searchTerm);
-    };
+  useEffect(() => {
+    const delaySearch = setTimeout(() => {
+      onSearch(searchTerm);
+    }, 300);
 
-    return (
-        <Form onSubmit={handleSubmit}>
-            <Form.Control
-                type="search"
-                placeholder="Buscar..."
-                className="me-2"
-                aria-label="Search"
-                value={searchTerm}
-                onChange={handleChange}
-            />
-            <Button variant="outline-success" type="submit">Buscar</Button>
-        </Form>
-    );
+    return () => clearTimeout(delaySearch);
+  }, [searchTerm, onSearch]);
+
+  return (
+    <div className="search-bar">
+      <Form>
+        <Form.Control
+          type="search"
+          placeholder="Buscar..."
+          className="me-2"
+          aria-label="Search"
+          value={searchTerm}
+          onChange={handleChange}
+        />
+      </Form>
+    </div>
+  );
 };
 
 export default SearchBar;
+
+
+
+
+
 
 

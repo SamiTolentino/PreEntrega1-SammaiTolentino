@@ -1,5 +1,6 @@
-import './_Item.scss'
+import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './_Item.scss'
 
 const Item = ({ id, name, img, price, stock }) => {
 
@@ -19,11 +20,13 @@ const Item = ({ id, name, img, price, stock }) => {
                     Precio: ${price}
                 </p>
                 <p className='Info'>
-                    Stock disponible:{stock}
+                    Stock disponible: {stock}
                 </p>
             </section>
             <footer className='ItemFooter'>
-                <Link to={`/item/${id}`} className='Option'>Ver Detalle</Link>
+                <Button className='ButtonFooter'>
+                    <Link to={`/item/${id}`} className='Option'>Ver Detalle</Link>
+                </Button>
             </footer>
         </article>
     )
