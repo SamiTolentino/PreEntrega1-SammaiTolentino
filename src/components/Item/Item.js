@@ -1,6 +1,6 @@
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './_Item.scss'
+import './_Item.scss';
 
 const Item = ({ id, name, img, price, stock }) => {
 

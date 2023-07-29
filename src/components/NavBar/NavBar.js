@@ -54,12 +54,12 @@ const NavBar = () => {
                   </Nav.Link>
                 </li>
                 <li className="footer-icon-item">
-                  <Nav.Link href="https://www.linkedin.com/tu-perfil-de-linkedin">
+                  <Nav.Link href="https://www.linkedin.com/in/sammai-tolentino-mendoza-frontend/">
                     <FontAwesomeIcon icon={faLinkedin} className="icon-linkedin" />
                   </Nav.Link>
                 </li>
                 <li className="footer-icon-item">
-                  <Nav.Link href="https://github.com/tu-nombre-de-usuario-en-github">
+                  <Nav.Link href="https://github.com/SamiTolentino">
                     <FontAwesomeIcon icon={faGithub} className="icon-github" />
                   </Nav.Link>
                 </li>

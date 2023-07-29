@@ -2,12 +2,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/itemListContainer/itemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Checkout from './components/Checkout/Checkout';
 import Cart from './components/Cart/Cart';
 import CartWidget from './components/CartWidget/Cartwidget';
 import Footer from './components/Footer/Footer';
-import './App.scss'
+import Error404 from './components/Error404/Error404';
+import './App.scss';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
             <Route path='/item/:itemId' element={<ItemDetailContainer />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/checkout' element={<Checkout />} />
-            <Route path='*' element={<h1>404 NOT FOUND</h1>} />
+            <Route path='*' element={<Error404 />} />
           </Routes>
         </CartProvider>
         <Footer />
