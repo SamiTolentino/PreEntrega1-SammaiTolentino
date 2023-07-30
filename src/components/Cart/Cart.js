@@ -12,7 +12,7 @@ const Cart = () => {
       <div className="Cart__Vacio">
         <h1>Carrito Vacio</h1>
         <img
-          src="https://previews.dropbox.com/p/thumb/AB-ag1tyRjNM8lk1RqR1IlEx-6u04u5w_FauHlg3MT6N6ft0H02fwtlixrCLeU-UyNOqZpGT8rNcioiFwXYn5kepgEUidHsOTts-87LYLll1j_AseHDtluMt5nxXqmtJsbDvdVHI73PZMr-tyWDn01hzBF21lv9JHUqS8Tsn-XhpuoJd3Z9cv85Gqij9HQtvP1R5E0hqigHr8swuW2uy5pRlD_AoQcDPjWqdSTQFPVeSGiOdLkHGurJ151sujMmp71t9XwXwIeW3yHU-6kQq4UVqs-7XTU0jvOvBuHn-Tfhs_FLxPRwKcwrUSx2f5SFcMUhNcMO48gm14lha_PZriTJY/p.png"
+          src="https://pbs.twimg.com/media/FJK-epaXEAYaQFv?format=jpg&name=small"
           alt="Compra invisible"
           className="Cart__Invisible"
         />
