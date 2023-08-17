@@ -1,18 +1,39 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import './_CheckoutForm.scss';
 
 const CheckoutForm = ({ onConfirm }) => {
-    const [name, setName] = useState('')
-    const [phone, setPhone] = useState('')
-    const [email, setEmail] = useState('')
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
+    const [formError, setFormError] = useState(false);
+
+    const namePattern = /^[a-zA-ZÀ-ÿ\s'-]+$/;
+    const phonePattern = /^\d+$/;
 
     const handleConfirm = (event) => {
-        event.preventDefault()
+        event.preventDefault();
+
+        if (!name || !phone || !email) {
+            setFormError(true);
+            return;
+        }
+
+        if (!name.match(namePattern)) {
+            setFormError(true);
+            return;
+        }
+
+        if (!phone.match(phonePattern)) {
+            setFormError(true);
+            return;
+        }
+
         const userData = {
             name, phone, email
-        }
-        onConfirm(userData)
-    }
+        };
+        onConfirm(userData);
+        setFormError(false);
+    };
 
     return (
         <div className="container">
@@ -39,17 +60,18 @@ const CheckoutForm = ({ onConfirm }) => {
                     Email
                     <input
                         className="form-input"
-                        type='text'
+                        type='email'
                         value={email}
                         onChange={({ target }) => setEmail(target.value)}
                     />
                 </label>
+                {formError && <p className="error">Por favor completa todos los campos correctamente</p>}
                 <div className="form-btn-container">
                     <button className="form-btn" type='submit'>Crear Orden</button>
                 </div>
             </form>
         </div>
-    )
+    );
 }
 
 export default CheckoutForm;
